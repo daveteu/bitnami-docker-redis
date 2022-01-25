@@ -423,8 +423,11 @@ redis_configure_default() {
         if [[ -n "$REDIS_ACLFILE" ]]; then
             redis_conf_set aclfile "$REDIS_ACLFILE"
         fi
+<<<<<<< HEAD
 
         # We call this last to add include the overrides conf at the end of redis.conf.
         redis_append_include_conf
+=======
+>>>>>>> cb85a36de4843390a681137048a92b526bfa7264
     fi
 }

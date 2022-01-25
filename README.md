@@ -294,7 +294,10 @@ services:
 ```
 
 ### Enabling Access Control List
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb85a36de4843390a681137048a92b526bfa7264
 Redis(TM) offers [ACL](https://redis.io/topics/acl) since 6.0 which allows certain connections to be limited in terms of the commands that can be executed and the keys that can be accessed. We strongly recommend enabling ACL in production by specifiying the `REDIS_ACLFILE`.
 
 ```console

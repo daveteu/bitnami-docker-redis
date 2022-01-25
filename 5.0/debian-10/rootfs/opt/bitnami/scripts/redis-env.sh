@@ -48,6 +48,7 @@ redis_env_vars=(
     REDIS_SENTINEL_HOST
     REDIS_SENTINEL_PORT_NUMBER
     REDIS_TLS_PORT
+    REDIS_OVERRIDES_FILE
 )
 for env_var in "${redis_env_vars[@]}"; do
     file_env_var="${env_var}_FILE"

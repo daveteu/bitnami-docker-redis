@@ -347,6 +347,7 @@ redis_initialize() {
   redis_override_conf
 }
 
+
 #########################
 # Append include directives to redis.conf
 # Globals:

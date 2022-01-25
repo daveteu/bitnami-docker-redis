@@ -294,10 +294,6 @@ services:
 ```
 
 ### Enabling Access Control List
-<<<<<<< HEAD
-
-=======
->>>>>>> cb85a36de4843390a681137048a92b526bfa7264
 Redis(TM) offers [ACL](https://redis.io/topics/acl) since 6.0 which allows certain connections to be limited in terms of the commands that can be executed and the keys that can be accessed. We strongly recommend enabling ACL in production by specifiying the `REDIS_ACLFILE`.
 
 ```console
@@ -506,6 +502,28 @@ services:
 ```
 
 Refer to the [Redis(TM) configuration](http://redis.io/topics/config) manual for the complete list of configuration options.
+
+### Overriding configuration
+
+Instead of providing a custom redis.conf, you may also choose to provide only settings you wish to override. The image will look for `/opt/bitnami/redis/mounted-etc/overrides.conf`. This will be ignored if custom `redis.conf` is provided.
+
+```console
+$ docker run --name redis \
+    -e ALLOW_EMPTY_PASSWORD=yes \
+    -v /path/to/overrides.conf:/opt/bitnami/redis/mounted-etc/overrides.conf \
+    bitnami/redis:latest
+```
+
+Alternatively, modify the [`docker-compose.yml`](https://github.com/bitnami/bitnami-docker-redis/blob/master/docker-compose.yml) file present in this repository:
+
+```yaml
+services:
+  redis:
+  ...
+    volumes:
+      - /path/to/overrides.conf:/opt/bitnami/redis/mounted-etc/overrides.conf 
+  ...
+```
 
 ## Logging
 

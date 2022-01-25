@@ -48,6 +48,8 @@ redis_env_vars=(
     REDIS_SENTINEL_HOST
     REDIS_SENTINEL_PORT_NUMBER
     REDIS_TLS_PORT
+    REDIS_ACLFILE
+    REDIS_OVERRIDES_FILE
 )
 for env_var in "${redis_env_vars[@]}"; do
     file_env_var="${env_var}_FILE"
@@ -68,6 +70,7 @@ export REDIS_BASE_DIR="${BITNAMI_ROOT_DIR}/redis"
 export REDIS_CONF_DIR="${REDIS_BASE_DIR}/etc"
 export REDIS_DATA_DIR="${REDIS_DATA_DIR:-${REDIS_VOLUME_DIR}/data}"
 export REDIS_MOUNTED_CONF_DIR="${REDIS_BASE_DIR}/mounted-etc"
+export REDIS_OVERRIDES_FILE="${REDIS_MOUNTED_CONF_DIR}/overrides.conf"
 export REDIS_CONF_FILE="${REDIS_CONF_DIR}/redis.conf"
 export REDIS_LOG_DIR="${REDIS_BASE_DIR}/logs"
 export REDIS_LOG_FILE="${REDIS_LOG_DIR}/redis.log"
@@ -97,6 +100,7 @@ export ALLOW_EMPTY_PASSWORD="${ALLOW_EMPTY_PASSWORD:-no}"
 export REDIS_PASSWORD="${REDIS_PASSWORD:-}"
 export REDIS_MASTER_PASSWORD="${REDIS_MASTER_PASSWORD:-}"
 export REDIS_ACLFILE="${REDIS_ACLFILE:-}"
+export REDIS_OVERRIDES_FILE="${REDIS_OVERRIDES_FILE:-}"
 
 # TLS settings
 export REDIS_TLS_ENABLED="${REDIS_TLS_ENABLED:-no}"
